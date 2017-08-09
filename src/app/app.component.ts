@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
-})
+}) 
 
 export class AppComponent {
   title = 'CV';
@@ -16,9 +16,9 @@ export class AppComponent {
     { id: 4 ,name: 'Interests', pnlTextArea: '' }
   ];
 
-  private getText(){    
-    //  this.panels[i].pnlTextArea = $("#pnlTextAreas").val();
-    //  console.log(this.panels[i].pnlTextArea)
+  private getText(event: any, i: number){   
+    this.panels[i].pnlTextArea = event.target.value;
+    console.log(this.panels[i].pnlTextArea);
   }
 }
 

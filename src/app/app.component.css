@@ -1,6 +1,7 @@
   #pnlTextAreas{
     max-width: 100%;
     background-color: white;
+    resize: none;
 }
 
 #pnlHeaders{
