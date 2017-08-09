@@ -2,10 +2,12 @@
   {{title}}
 </h1>
 
-<div id="pnlInfo" class="col-sm-8 col-sm-offset-2 panel panel-defualt" *ngFor="let panel of panels; let i=index">
-  <div id="pnlHeaders" class="panel-heading">
-    <md-input-container id="inputContainer">
-      <textarea id="pnlTextAreas" mdInput placeholder="{{panel.name}}" type="text" class="form-control" rows="8" [(ngModel)]="panel.pnlTextArea" (keyup)="getText($event, i)"></textarea>
+<div id="pnlInfo" class="col-sm-8 col-sm-offset-2 panel panel-defualt">
+  <div id="pnlHeaders" class="panel-heading" *ngFor="let panel of panels; let i=index;">
+    <md-input-container id="inputContainer" (mouseover)="panelMouseOver(i)" (mouseout)="panelMouseOut()">
+      <textarea id="pnlTextAreas" mdInput placeholder="{{panel.name}}" type="text" class="form-control" rows="8" [(ngModel)]="panel.pnlTextArea"
+        (keyup)="getText($event, i)"></textarea>
     </md-input-container>
+      <div id="infoWells{{i}}" class="well">{{panel.info}}</div>
   </div>
 </div>

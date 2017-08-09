@@ -1,16 +1,8 @@
-  #pnlTextAreas{
+#pnlTextAreas{
     max-width: 100%;
     background-color: white;
     resize: none;
-}
-
-#pnlHeaders{
-    padding-bottom: 1%;
-}
-
-#buttons{
-    padding-top: 1%;
-} 
+    }
 
 #pnlTxtPreview{
     padding-top: 1%;
@@ -23,3 +15,6 @@
 #inputContainer{
     width:100%;
 }
+/* #infoWells{
+    display: none;
+} */
