@@ -1,3 +1,14 @@
-<h1>
+<h1 class="col-sm-offset-6">
   {{title}}
 </h1>
+
+<div id="pnlInfo" class="col-sm-8 col-sm-offset-2 panel panel-defualt" *ngFor="let panel of panels; let i=index">
+  <div id="pnlHeaders" class="panel-heading">
+    <md-input-container id="inputContainer">
+      <textarea id="pnlTextAreas" mdInput placeholder="{{panel.name}}" type="text" class="form-control" rows="8" [(ngModel)]="panel.pnlTextArea">{{panel.pnlTextArea}}</textarea>
+    </md-input-container>
+    <button id="btnSave" class="btn btn-success" (click)="getText()"> Save </button>
+    <button id="btnClear" class="btn btn-danger"> Clear </button>
+    <button id="btnRestore" class="btn btn-primary"> Restore </button>
+  </div>
+</div>

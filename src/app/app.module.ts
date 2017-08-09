@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MdInputModule} from '@angular/material';
+
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -10,6 +13,8 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
+    MdInputModule,
+    BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
     HttpModule
