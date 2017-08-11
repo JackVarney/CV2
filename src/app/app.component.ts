@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, SimpleChanges, Input} from '@angular/core';
 import {
   trigger,
   state,
@@ -7,22 +7,32 @@ import {
   transition
 } from '@angular/animations';
 
+interface OnChanges {
+  ngOnChanges(changes: SimpleChanges): void
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  
-  animations:[
-    trigger('wellIn', [
-      state('active', style({
-      })),
-      state('inactive', style({
-      })),
-      transition('active => inactive', animate('100ms ease-in')),
-      transition('inactive => active', animate('100ms ease-in'))
+  animations: [
+    trigger ('visibilityChanged', [
+       state('shown' , style({ opacity: 1 })),
+    state('hidden', style({ opacity: 0 })),
+    transition('shown => hidden', animate('600ms')),
+    transition('hidden => shown', animate('300ms')),
     ])
   ]
 })
+
+export class FaderComp implements OnChanges {
+  @Input() isVisible : boolean = true;
+  
+  ngOnChanges(changes: SimpleChanges) {
+  }
+}
+
+
 
 export class AppComponent {
   title = 'CV';

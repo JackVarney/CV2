@@ -6,10 +6,12 @@ import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdInputModule, MdTooltipModule, MdCheckboxModule } from '@angular/material';
 import { AppComponent } from './app.component';
+//import { FaderComp } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    //FaderComp
   ],
   imports: [
     MdCheckboxModule,
