@@ -1,13 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, trigger, state, transition, style, animate } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  animations: [
+    trigger('wellIn', [
+      state('close', style({ opacity: '1' })),
+      state('open', style({ opacity: '0' })),
+      transition('open => close', animate('400ms ease-in')),
+      transition('close => open', animate('400ms ease-out'))
+
+    ])
+  ]
 })
 
 export class AppComponent {
   title = 'CV';
+
+  wellState: string = 'open';
+
+  wellOpenClose(): void {
+    this.wellState = (this.wellState === 'open') ? 'close' : 'open';
+  }
 
   public panels = [
     { id: 1, name: 'Profile', pnlTextArea: '', info: "Let us know why you wish to work in your sector!", tipPos: "Above" },
@@ -21,18 +36,13 @@ export class AppComponent {
     console.log(this.panels[i].pnlTextArea);
   }
 
-  private disableToolTips(i) {
-    for (var j = 0; i == j; j++) {
-      this.panels[j].info = "";
-    }
+  panelMouseOver(i: number) {
+    document.getElementById("infoWells" + i).className = "well"
+    console.log("here")
   }
 
-  panelMouseOver(i: number){
-    $("#infowells"+i).fadeOut();
-    console.log("something")
-  }
-
-  panelMouseOut(i: number){
-
+  panelMouseOut(i: number) {
+    document.getElementById("infoWells" + i).className = "well hidden"
+    console.log("here")
   }
 }
