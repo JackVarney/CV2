@@ -3,9 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MdInputModule, MdTooltipModule, MdCheckboxModule} from '@angular/material';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MdInputModule, MdTooltipModule, MdCheckboxModule } from '@angular/material';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -24,4 +23,5 @@ import { AppComponent } from './app.component';
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

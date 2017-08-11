@@ -1,9 +1,27 @@
 import { Component } from '@angular/core';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition
+} from '@angular/animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  
+  animations:[
+    trigger('wellIn', [
+      state('active', style({
+      })),
+      state('inactive', style({
+      })),
+      transition('active => inactive', animate('100ms ease-in')),
+      transition('inactive => active', animate('100ms ease-in'))
+    ])
+  ]
 })
 
 export class AppComponent {
@@ -21,18 +39,12 @@ export class AppComponent {
     console.log(this.panels[i].pnlTextArea);
   }
 
-  private disableToolTips(i) {
-    for (var j = 0; i == j; j++) {
-      this.panels[j].info = "";
-    }
+  panelMouseOver(i: number) {
+    document.getElementById("infoWells" + i).className = "well"
   }
 
-  panelMouseOver(i: number){
-    $("#infowells"+i).fadeOut();
-    console.log("something")
-  }
-
-  panelMouseOut(i: number){
-
+  panelMouseOut(i: number) {
+    document.getElementById("infoWells" + i).className = "well hidden"
+    console.log("stuff")
   }
 }
