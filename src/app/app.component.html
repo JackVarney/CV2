@@ -1,13 +1,16 @@
-<h1 class="col-sm-offset-6">
-  {{title}}
-</h1>
+<div class="row col-sm-offset-6">
+  <h1 id="title" class="col-sm-1">
+    {{title}}
+  </h1>
+</div>
 
 <div id="pnlInfo" class="col-sm-8 col-sm-offset-2 panel panel-defualt">
-  <div id="pnlHeaders" class="panel-heading" *ngFor="let panel of panels; let i=index;" (mouseover)="wellOpenClose()" (mouseout)="wellOpenClose()">
-    <md-input-container id="inputContainer" >
-      <textarea id="pnlTextAreas" mdInput placeholder="{{panel.name}}" type="text" class="form-control" rows="8" [(ngModel)]="panel.pnlTextArea"
-        (keyup)="getText($event, i)"></textarea>
+  <div id="pnlHeaders" class="panel-heading" *ngFor="let panel of panels; let i=index;" (mouseover)="wellOpenClose(i)" (mouseout)="wellOpenClose(i)">
+    <md-input-container id="inputContainer">
+      <textarea id="pnlTextAreas" mdInput placeholder="{{panel.name}}" type="text" class="form-control" rows="8" [(ngModel)]="panel.pnlTextArea"></textarea>
     </md-input-container>
-      <div id="infoWells{{i}}" class="well" [@wellIn]='wellState'>{{panel.info}}</div>
+    <div id="infoWells{{i}}" class="well" [@wellIn]="panel.state">{{panel.info}}
+        <md-checkbox  (click)="chkbxClicked(i)">Click Me!</md-checkbox>
+    </div>
   </div>
 </div>

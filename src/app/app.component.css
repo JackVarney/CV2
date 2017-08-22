@@ -15,8 +15,11 @@
 #inputContainer{
     width:100%;
 }
-#omg{
-    width: 600px;
-    height: 1000px;
-    background-color: green;
+
+#pnlRadio{
+    margin: 5px;
+}
+
+md-checkbox{
+    margin-left: 5px;
 }

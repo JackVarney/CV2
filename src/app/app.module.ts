@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MdInputModule, MdTooltipModule, MdCheckboxModule} from '@angular/material';
+import {MdRadioModule, MdInputModule, MdTooltipModule, MdCheckboxModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 
@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
+    MdRadioModule,
     MdCheckboxModule,
     MdTooltipModule,
     MdInputModule,
